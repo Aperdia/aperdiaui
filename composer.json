@@ -1,0 +1,23 @@
+{
+    "name": "aperdia/aperdiaui",
+    "description": "UI Basis for Laravel5",
+    "keywords": ["laravel", "bootstrap3"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "caouecs",
+            "email": "caouecs@caouecs.net"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "~5",
+        "laravelcollective/html": "~5",
+    },
+    "autoload": {
+        "psr-0": {
+            "Aperdia\\AperdiaUI": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
