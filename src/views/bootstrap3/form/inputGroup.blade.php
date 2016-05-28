@@ -29,7 +29,7 @@
   </div>
 @endif
 
-@if (!empty($help)) {
+@if (!empty($help))
   <span class="help-block">{!! $help !!}</span>
 @endif
 
