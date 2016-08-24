@@ -1,4 +1,4 @@
-<div{!! HTML::attributes($attributes) !!}>
+<div{!! HTML::attributes(Aperdia\AperdiaUI\Helpers::addClass($attributes, 'dropdown')) !!}>
   <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
     data-toggle="dropdown" aria-expanded="true">
     {!! $title !!}

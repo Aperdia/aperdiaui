@@ -30,6 +30,8 @@ class AperdiaUIServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__.'/../../../config/aperdiaui.php', 'aperdiaui');
 
         $this->loadViewsFrom(__DIR__.'/../../../views', 'aperdiaui');
+
+        $this->loadTranslationsFrom(__DIR__.'/../../../translations', 'aperdiaui');
     }
 
     /**

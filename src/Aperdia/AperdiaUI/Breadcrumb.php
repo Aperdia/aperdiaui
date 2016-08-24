@@ -102,7 +102,7 @@ class Breadcrumb extends Core
         return self::view(
             'breadcrumb',
             [
-                'attributes' => Helpers::addClass($this->attributes, 'breadcrumb'),
+                'attributes' => $this->attributes,
                 'elements' => $this->elements,
                 'cover' => $this->cover,
             ],
