@@ -4,7 +4,7 @@
       <div class="small-12">
 @endif
 
-<ol{!! HTML::attributes($attributes) !!} itemprop="breadcrumb">
+<ol{!! HTML::attributes(Aperdia\AperdiaUI\Helpers::addClass($attributes, 'breadcrumb')) !!} itemprop="breadcrumb">
 
 @foreach ($elements as $element)
   <li {!! HTML::attributes($element['attributes']) !!}>
