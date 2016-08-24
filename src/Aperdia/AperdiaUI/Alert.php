@@ -67,19 +67,12 @@ class Alert extends Indicator
      */
     public function show()
     {
-        // class
-        $_class = $this->class.' '.$this->type;
-
-        // close
-        if ($this->close === true) {
-            $_class .= ' alert-dismissable';
-        }
-
         return self::view(
             'alert',
             [
                 'tag' => $this->tag,
-                'attributes' => Helpers::addClass($this->attributes, $_class),
+                'class' => $this->class.' '.$this->type,
+                'attributes' => $this->attributes,
                 'close' => $this->close,
                 'message' => $this->message,
             ],

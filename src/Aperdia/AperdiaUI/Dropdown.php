@@ -143,7 +143,7 @@ class Dropdown extends Core
         return self::view(
             'dropdown',
             [
-                'attributes' => Helpers::addClass($this->attributes, 'dropdown'),
+                'attributes' => $this->attributes,
                 'title' => $this->title,
                 'elements' => $this->elements,
             ],
