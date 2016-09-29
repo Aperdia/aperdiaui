@@ -432,29 +432,9 @@ class Form extends FormFacade
      */
     public static function submitGroup($options = [], $attributes = [])
     {
-        $attributes = Helpers::addClass($attributes, 'btn btn-primary');
-
         $options['submit_title'] = array_get($options, 'submit_title', trans('form.submit'));
 
-        $text = self::submit($options['submit_title'], $attributes);
-
-        /*
-         * Url for cancel
-         */
-        if (isset($options['cancel_url'])) {
-            $text .= ' '.link_to($options['cancel_url'], trans('form.cancel'));
-        }
-
-        /*
-         * Reset
-         */
-        if (isset($options['reset']) && $options['reset'] === true) {
-            $text .= ' '.self::reset('Reset', ['class' => 'btn btn-default']);
-        }
-
-        return self::view('form.submitGroup', [
-            'text' => $text,
-        ]);
+        return self::view('form.submitGroup', compact('attributes', 'options'));
     }
 
     /**

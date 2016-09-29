@@ -67,15 +67,17 @@ class Dropdown extends Core
      *
      * @param string $title Title of element
      * @param string $link  Link of element
+     * @param string $icon  Icon of element
      *
      * @return Dropdown
      */
-    public function addLink($title, $link = null)
+    public function addLink($title, $link = null, $icon = null)
     {
         $this->elements[] = [
             'type' => 'link',
             'title' => e($title),
             'link' => (string) $link,
+            'icon' => $icon,
         ];
 
         return $this;
