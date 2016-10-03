@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'style' => 'alux',
+    'style' => 'bootstrap3',
 ];
