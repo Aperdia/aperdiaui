@@ -70,11 +70,12 @@ class Alert extends Indicator
         return self::view(
             'alert',
             [
+                'type' => $this->type,
                 'tag' => $this->tag,
-                'class' => $this->class.' '.$this->type,
                 'attributes' => $this->attributes,
                 'close' => $this->close,
                 'message' => $this->message,
+                'class' => $this->class,
             ],
             true
         );

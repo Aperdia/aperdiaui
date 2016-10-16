@@ -1,5 +1,5 @@
 <p class="control">
-  <label class="checkbox">
+  <label class="checkbox label">
     {!! $text !!}
     {!! $title !!}
   @if (!empty($help))

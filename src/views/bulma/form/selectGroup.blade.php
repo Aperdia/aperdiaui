@@ -1,4 +1,4 @@
-@if ($label)
+@if ($title)
   {!! Form::label($name, $title, ['class' => 'label']) !!}
 @endif
 

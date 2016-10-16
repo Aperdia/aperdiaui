@@ -6,7 +6,7 @@
       {!! link_to($options['cancel_url'], trans('form.cancel')) !!}
     @endif
 
-    @if (isset($options['reset']) && $options['reset'] === true):
+    @if (isset($options['reset']) && $options['reset'] === true)
       {!! Form::reset('Reset', ['class' => 'btn btn-default']) !!}
     @endif
   </div>

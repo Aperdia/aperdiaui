@@ -5,7 +5,7 @@
     {!! link_to($options['cancel_url'], trans('form.cancel')) !!}
   @endif
 
-  @if (isset($options['reset']) && $options['reset'] === true):
-    {!! Form::reset('Reset', ['class' => 'button']) !!}
+  @if (isset($options['reset']) && $options['reset'] === true)
+    {!! Form::reset(trans('aperdiaui::ui.Reset'), ['class' => 'button is-link']) !!}
   @endif
 </div>
