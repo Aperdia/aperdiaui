@@ -2,7 +2,7 @@
 @if ($label)
   {!! Form::label($name, $title) !!}
 @endif
-  {!! $text !!}
+  {!! Form::input($type, $name, $value, \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'form-control')) !!}
 
 @if (!empty($help))
   <p><span class="help-block">{!! $help !!}</span></p>

@@ -52,16 +52,14 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
-
-        $text = self::input($type, $name, Request::old($name) ? Request::old($name) : $value, $attributes);
-
-        return self::view('form.inputGroup', [
+        return self::view('form.inputBasic', [
+            'type' => $type,
             'errors' => $errors,
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'text' => $text,
+            'value' => Request::old($name) ? Request::old($name) : $value,
+            'attributes' => $attributes,
         ]);
     }
 
@@ -87,16 +85,14 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
-
-        $text = self::select($name, $list, Request::old($name) ? Request::old($name) : $value, $attributes);
-
-        return self::view('form.inputGroup', [
+        return self::view('form.selectBasic', [
             'errors' => $errors,
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'text' => $text,
+            'list' => $list,
+            'value' => Request::old($name) ? Request::old($name) : $value,
+            'attributes' => $attributes,
         ]);
     }
 
@@ -128,11 +124,8 @@ class Form extends FormFacade
         $iconpre = null,
         $iconpost = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
-
-        $text = self::input($type, $name, Request::old($name) ? Request::old($name) : $value, $attributes);
-
         return self::view('form.inputGroup', [
+            'type' => $type,
             'errors' => $errors,
             'name' => $name,
             'title' => $title,
@@ -140,7 +133,8 @@ class Form extends FormFacade
             'help' => $help,
             'iconpost' => $iconpost,
             'iconpre' => $iconpre,
-            'text' => $text,
+            'value' => Request::old($name) ? Request::old($name) : $value,
+            'attributes' => $attributes,
         ]);
     }
 
@@ -168,8 +162,6 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
-
         $inputLanguages = '';
 
         foreach ($languages as $val) {
@@ -180,7 +172,10 @@ class Form extends FormFacade
             }
 
             $inputLanguages[] = [
-                'input' => self::input($type, $name.'['.$val['id'].']', $value_tmp, $attributes),
+                'type' => $type,
+                'name' => $name.'['.$val['id'].']',
+                'value' => $value_tmp,
+                'attributes' => $attributes,
                 'title' => $val['title'],
                 'id' => $val['id'],
             ];
@@ -215,17 +210,15 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
         $attributes['rows'] = 5;
-
-        $text = self::textarea($name, Request::old($name) ? Request::old($name) : $value, $attributes);
 
         return self::view('form.textareaGroup', [
             'errors' => $errors,
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'text' => $text,
+            'value' => Request::old($name) ? Request::old($name) : $value,
+            'attributes' => $attributes,
         ]);
     }
 
@@ -249,17 +242,15 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
         $attributes['rows'] = 5;
-
-        $text = self::textarea($name, Request::old($name) ? Request::old($name) : $value, $attributes);
 
         return self::view('form.textareaLine', [
             'errors' => $errors,
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'text' => $text,
+            'value' => Request::old($name) ? Request::old($name) : $value,
+            'attributes' => $attributes,
         ]);
     }
 
@@ -285,10 +276,9 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
         $attributes['rows'] = 5;
 
-        $text = null;
+        $translation = null;
 
         foreach ($languages as $val) {
             $value_tmp = Request::old($name.'['.$val['id'].']') ? Request::old($name.'['.$val['id'].']') : null;
@@ -297,13 +287,18 @@ class Form extends FormFacade
                 $value_tmp = isset($value[$val['id']][$name]) ? $value[$val['id']][$name] : null;
             }
 
-            $text .= '<div>'.$val['title'].'</div>';
-
-            $text .= self::textarea($name.'['.$val['id'].']', $value_tmp, $attributes);
-
+            $error = null;
             if (!is_null($errors) && $errors->has($name.'['.$val['id'].']')) {
-                $text .= '<span class="text-danger">'.$errors->first($name.'['.$val['id'].']').'</span>';
+                $error = $errors->first($name.'['.$val['id'].']');
             }
+
+            $translation[] = [
+                'title' => $val['title'],
+                'name' => $name.'['.$val['id'].']',
+                'value' => $value_tmp,
+                'attributes' => $attributes,
+                'error' => $error,
+            ];
         }
 
         return self::view('form.textareaMultiLanguageGroup', [
@@ -311,7 +306,7 @@ class Form extends FormFacade
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'text' => $text,
+            'languages' => $translation,
         ]);
     }
 
@@ -337,14 +332,14 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $attributes = Helpers::addClass($attributes, 'form-control');
-
         return self::view('form.selectGroup', [
             'errors' => $errors,
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'text' => self::select($name, $list, Request::old($name) ? Request::old($name) : $value, $attributes),
+            'list' => $list,
+            'value' => Request::old($name) ? Request::old($name) : $value,
+            'attributes' => $attributes,
         ]);
     }
 

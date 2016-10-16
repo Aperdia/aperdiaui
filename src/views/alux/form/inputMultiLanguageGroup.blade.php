@@ -9,7 +9,7 @@
   @foreach ($inputLanguages as $val)
     <div class="pull-left">{!! $val['title'] !!}</div>
 
-      {!! $val['input'] !!}
+      {!! Form::input($val['type'], $val['name'], $val['value'], \Aperdia\AperdiaUI\Helpers::addClass($val['attributes'], 'form-control')) !!}
 
     @if (!is_null($errors) && $errors->has($name.'['.$val['id'].']'))
       <span class="text-danger">{!! $errors->first($name.'['.$val['id'].']') !!}</span>

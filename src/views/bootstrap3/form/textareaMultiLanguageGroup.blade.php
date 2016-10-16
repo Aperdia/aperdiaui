@@ -10,6 +10,13 @@
     <span class="help-block">{!! $help !!}</span>
   @endif
 
-    {!! $text !!}
+   @foreach ($languages as $language)
+    <div>{!! $language['title'] !!}</div>
+    {!! Form::textarea($language['name'], $language['value'], \Aperdia\AperdiaUI\Helpers::addClass($language['attributes'], 'form-control')) !!}
+
+    @if ($language['error'])
+      <span class="text-danger">{!! $language['error'] !!}</span>
+    @endif
+  @endforeach
   </div>
 </div>

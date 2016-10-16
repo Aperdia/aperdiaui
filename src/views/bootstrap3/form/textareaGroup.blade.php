@@ -8,7 +8,7 @@
 
   <div class="col-md-10">
 
-    {!! $text !!}
+    {!! Form::textarea($name, $value, \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'form-control')) !!}
 
   @if (!empty($help))
     <span class="help-block">{!! $help !!}</span>

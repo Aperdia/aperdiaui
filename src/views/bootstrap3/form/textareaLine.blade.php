@@ -5,7 +5,7 @@
 @endif
   <label for="{!! $name !!}">{!! $title !!}</label>
 
-  {!! $text !!}
+  {!! Form::textarea($name, $value, \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'form-control')) !!}
 
 @if (!is_null($errors) && $errors->has($name))
   <span class="text-danger">{!! $errors->first($name) !!}</span>

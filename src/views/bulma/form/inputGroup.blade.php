@@ -1,9 +1,9 @@
 @if ($label)
-  {!! Form::label($name, $title) !!}
+  {!! Form::label($name, $title, ['class' => 'label']) !!}
 @endif
 
 <p class="control">
-  {!! $text !!}
+  {!! Form::input($type, $name, $value, \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'input')) !!}
 
   @if (!empty($help))
     <p><span class="help">{!! $help !!}</span></p>

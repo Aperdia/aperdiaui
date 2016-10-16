@@ -1,1 +1,1 @@
-@include('ui::bulma.form.inputGroup')
+@include('ui::bulma.form.textareaGroup')

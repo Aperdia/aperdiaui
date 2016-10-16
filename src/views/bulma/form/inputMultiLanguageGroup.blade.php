@@ -1,4 +1,4 @@
-<label for="{!! $name !!}">{!! $title !!}</label>
+<label for="{!! $name !!}" class="label">{!! $title !!}</label>
 <p class="control">
 
 @if (!empty($help))
@@ -6,13 +6,13 @@
 @endif
 
 @foreach ($inputLanguages as $val)
-  <div class="pull-left">{!! $val['title'] !!}</div>
+  <label>{!! $val['title'] !!}</label>
 
-    {!! $val['input'] !!}
+    {!! Form::input($val['type'], $val['name'], $val['value'], \Aperdia\AperdiaUI\Helpers::addClass($val['attributes'], 'input')) !!}
 
   @if (!is_null($errors) && $errors->has($name.'['.$val['id'].']'))
     <span class="help is-danger">{!! $errors->first($name.'['.$val['id'].']') !!}</span>
   @endif
 @endforeach
 
-</div>
+</p>
