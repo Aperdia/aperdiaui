@@ -5,7 +5,7 @@
 @endif
   <label  class="col-md-2 control-label" for="{!! $name !!}">{!! $title !!}</label>
   <div class="col-md-10">
-    {!! $text !!}
+    {!! Form::input($type, $name, $value, \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'form-control')) !!}
 
   @if (!empty($help))
     <span class="help-block">{!! $help !!}</span>
