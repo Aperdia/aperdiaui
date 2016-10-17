@@ -19,7 +19,7 @@
   <span class="input-group-addon"><span class="{!! $iconpre !!}"></span></span>
 @endif
 
-  {!! $text !!}
+  {!! Form::input($type, $name, $value, \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'form-control')) !!}
 
 @if ($iconpost)
   <span class="input-group-addon"><span class="{!! $iconpost !!}"></span></span>

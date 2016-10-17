@@ -1,9 +1,9 @@
 <div>
   <label for="{!! $name !!}">{!! $title !!}</label>
 
-  {!! $text !!}
+  {!! Form::input($type, $name, $value, \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'form-control')) !!}
 
-  @if (!empty($help)) {
+  @if (!empty($help))
     <span class="help-block">{!! $help !!}</span>
   @endif
 
