@@ -2,7 +2,7 @@
 <p class="control">
 
 @if (!empty($help))
-  <span class="help">{!! $help !!}</span>
+  <p class="help">{!! $help !!}</p>
 @endif
 
 @foreach ($inputLanguages as $val)
@@ -11,7 +11,7 @@
     {!! Form::input($val['type'], $val['name'], $val['value'], \Aperdia\AperdiaUI\Helpers::addClass($val['attributes'], 'input')) !!}
 
   @if (!is_null($errors) && $errors->has($name.'['.$val['id'].']'))
-    <span class="help is-danger">{!! $errors->first($name.'['.$val['id'].']') !!}</span>
+    <p class="help is-danger">{!! $errors->first($name.'['.$val['id'].']') !!}</p>
   @endif
 @endforeach
 
