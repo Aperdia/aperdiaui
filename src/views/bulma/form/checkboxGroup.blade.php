@@ -3,10 +3,10 @@
     {!! $text !!}
     {!! $title !!}
   @if (!empty($help))
-    <span class="help">{!! $help !!}</span>
+    <p class="help">{!! $help !!}</p>
   @endif
   @if (!is_null($errors) && $errors->has($name))
-    <span class="help is-danger">{!! $errors->first($name) !!}</span>
+    <p class="help is-danger">{!! $errors->first($name) !!}</p>
   @endif
   </label>
 </p>

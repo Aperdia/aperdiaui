@@ -2,7 +2,7 @@
   <label class="label" for="{!! $name !!}">{!! $title !!}</label>
 
   @if (!empty($help))
-    <span class="help">{!! $help !!}</span>
+    <p class="help">{!! $help !!}</p>
   @endif
 
   @foreach ($languages as $language)
@@ -10,7 +10,7 @@
     {!! Form::textarea($language['name'], $language['value'], \Aperdia\AperdiaUI\Helpers::addClass($language['attributes'], 'textarea')) !!}
 
     @if ($language['error'])
-      <span class="text-danger">{!! $language['error'] !!}</span>
+      <p class="text-danger">{!! $language['error'] !!}</p>
     @endif
   @endforeach
 </div>
