@@ -1,0 +1,10 @@
+# Changelog
+
+## [1.1.0] 2016-12-29
+###
+
+* update of Form::textGroup because the title can be null.
+
+    before: textGroup($title, $text)
+
+    now: textGroup($text, $title = null)

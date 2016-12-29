@@ -435,12 +435,12 @@ class Form extends FormFacade
     /**
      * Display text with title for form-group.
      *
-     * @param string $title
      * @param string $text
+     * @param string $title
      *
      * @return string
      */
-    public static function textGroup($title, $text)
+    public static function textGroup($text, $title = null)
     {
         return self::view('form.textGroup', [
             'title' => $title,
