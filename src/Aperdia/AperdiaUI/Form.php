@@ -162,7 +162,7 @@ class Form extends FormFacade
         $attributes = [],
         $help = null
     ) {
-        $inputLanguages = '';
+        $inputLanguages = [];
 
         foreach ($languages as $val) {
             $value_tmp = Request::old($name.'['.$val['id'].']') ? Request::old($name.'['.$val['id'].']') : null;
