@@ -464,4 +464,45 @@ class Form extends FormFacade
 
         return $res;
     }
+
+    /**
+     * Display time select.
+     *
+     * @param  string $name
+     * @param  string $title
+     * @param  mixed $value
+     * @param  MessageBag $errors
+     * @param  array  $attributes
+     * @param  string $help
+     *
+     * @return string
+     */
+    public static function time(
+        $name,
+        $title,
+        $value = null,
+        $errors = null,
+        $attributes = [],
+        $help = null
+    ) {
+        $values = [null => '--'];
+
+        for ($h = 0; $h < 24; ++$h) {
+            if ($h < 10) {
+                $h = '0'.$h;
+            }
+
+            for ($m = 0; $m < 60; ++$m) {
+                if ($m < 10) {
+                    $m = '0'.$m;
+                }
+
+                $values[$h.':'.$m] = $h.':'.$m;
+
+                $m = $m + 29;
+            }
+        }
+
+        return parent::selectGroup($name, $title, $values, $value, $errors, $attributes, $help);
+    }
 }
