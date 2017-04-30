@@ -503,6 +503,6 @@ class Form extends FormFacade
             }
         }
 
-        return parent::selectGroup($name, $title, $values, $value, $errors, $attributes, $help);
+        return self::selectGroup($name, $title, $values, $value, $errors, $attributes, $help);
     }
 }
