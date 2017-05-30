@@ -31,7 +31,7 @@ class Helpers
      *
      * @return array
      */
-    public static function addClass($array, $value, $key = 'class')
+    public static function addClass(array $array, string $value, string $key = 'class')
     {
         $array[$key] = isset($array[$key]) ? $array[$key].' '.$value : $value;
 

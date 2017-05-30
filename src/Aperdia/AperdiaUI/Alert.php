@@ -43,7 +43,7 @@ class Alert extends Indicator
      *
      * @return Alert
      */
-    protected static function create($class, $message, $attributes = [])
+    protected static function create(string $class, string $message, array $attributes = [])
     {
         return new self($class, $message, $attributes);
     }

@@ -39,7 +39,7 @@ class Breadcrumb extends Core
      *
      * @param array $attributes Attributes of breadcrumb
      */
-    public function __construct($attributes = [])
+    public function __construct(array $attributes = [])
     {
         if (!empty($attributes) && is_array($attributes)) {
             $this->attributes = $attributes;
@@ -53,7 +53,7 @@ class Breadcrumb extends Core
      *
      * @return Breadcrumb
      */
-    public static function create($attributes = [])
+    public static function create(array $attributes = [])
     {
         return new self($attributes);
     }
@@ -67,11 +67,11 @@ class Breadcrumb extends Core
      *
      * @return Breadcrumb
      */
-    public function add($title, $link = null, $attributes = [])
+    public function add(string $title, string $link = '', array $attributes = [])
     {
         $this->elements[] = [
             'title' => e($title),
-            'link' => (string) $link,
+            'link' => $link,
             'attributes' => $attributes,
         ];
 
@@ -80,6 +80,8 @@ class Breadcrumb extends Core
 
     /**
      * Cover.
+     *
+     * @return  Breadcrumb
      */
     public function cover()
     {
@@ -96,7 +98,7 @@ class Breadcrumb extends Core
     public function show()
     {
         if (empty($this->elements)) {
-            return;
+            return '';
         }
 
         return self::view(

@@ -18,7 +18,7 @@ class Dropdown extends Core
      *
      * @var string
      */
-    protected $title = null;
+    protected $title = '';
 
     /**
      * Elements of dropdown.
@@ -40,7 +40,7 @@ class Dropdown extends Core
      * @param string $title      Title of dropdown
      * @param array  $attributes Attributes of dropdown
      */
-    public function __construct($title = 'Action', $attributes = [])
+    public function __construct(string $title = 'Action', array $attributes = [])
     {
         $this->title = $title;
 
@@ -57,7 +57,7 @@ class Dropdown extends Core
      *
      * @return Dropdown
      */
-    public static function create($title = 'Action', $attributes = [])
+    public static function create(string $title = 'Action', array $attributes = [])
     {
         return new self($title, $attributes);
     }
@@ -71,12 +71,12 @@ class Dropdown extends Core
      *
      * @return Dropdown
      */
-    public function addLink($title, $link = null, $icon = null)
+    public function addLink(string $title, string $link = '', string $icon = '')
     {
         $this->elements[] = [
             'type' => 'link',
             'title' => e($title),
-            'link' => (string) $link,
+            'link' => $link,
             'icon' => $icon,
         ];
 
@@ -90,7 +90,7 @@ class Dropdown extends Core
      *
      * @return Dropdown
      */
-    public function addHeader($title)
+    public function addHeader(string $title)
     {
         $this->elements[] = [
             'type' => 'header',
@@ -121,7 +121,7 @@ class Dropdown extends Core
      *
      * @return Dropdown
      */
-    public function addDisabled($title)
+    public function addDisabled(string $title)
     {
         $this->elements[] = [
             'type' => 'disabled',

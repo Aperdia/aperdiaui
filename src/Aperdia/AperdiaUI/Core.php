@@ -28,8 +28,11 @@ class Core
      *
      * @param string $viewName Name of the base view
      * @param array  $params   Params
+     * @param bool   $render
+     *
+     * @return  string|\Illuminate\Http\Response
      */
-    public static function view($viewName, $params = [], $render = false)
+    public static function view(string $viewName, array $params = [], bool $render = false)
     {
         $res = view('aperdiaui::'.config('aperdiaui.style').'.'.$viewName, $params);
 
