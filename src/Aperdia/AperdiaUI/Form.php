@@ -25,7 +25,7 @@ class Form extends FormFacade
      *
      * @return string
      */
-    public static function openHorizontal($options = [])
+    public static function openHorizontal(array $options = [])
     {
         return self::open(Helpers::addClass($options, 'form-horizontal'));
     }
@@ -44,13 +44,13 @@ class Form extends FormFacade
      * @return string
      */
     public static function inputBasic(
-        $type,
-        $name,
-        $title = null,
+        string $type,
+        string $name,
+        string $title = '',
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         return self::view('form.inputBasic', [
             'type' => $type,
@@ -77,13 +77,13 @@ class Form extends FormFacade
      * @return string
      */
     public static function selectBasic(
-        $name,
-        $title,
-        $list,
+        string $name,
+        string $title,
+        array $list,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         return self::view('form.selectBasic', [
             'errors' => $errors,
@@ -113,16 +113,16 @@ class Form extends FormFacade
      * @return string
      */
     public static function inputGroup(
-        $type,
-        $name,
-        $title,
+        string $type,
+        string $name,
+        string $title,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null,
-        $label = true,
-        $iconpre = null,
-        $iconpost = null
+        array $attributes = [],
+        string $help = '',
+        bool $label = true,
+        string $iconpre = '',
+        string $iconpost = ''
     ) {
         return self::view('form.inputGroup', [
             'type' => $type,
@@ -153,14 +153,14 @@ class Form extends FormFacade
      * @return string
      */
     public static function inputMultiLanguageGroup(
-        $languages,
-        $type,
-        $name,
-        $title,
+        array $languages,
+        string $type,
+        string $name,
+        string $title,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         $inputLanguages = [];
 
@@ -203,12 +203,12 @@ class Form extends FormFacade
      * @return string
      */
     public static function textareaGroup(
-        $name,
-        $title,
+        string $name,
+        string $title,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         $attributes['rows'] = 5;
 
@@ -235,12 +235,12 @@ class Form extends FormFacade
      * @return string
      */
     public static function textareaLine(
-        $name,
-        $title,
+        string $name,
+        string $title,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         $attributes['rows'] = 5;
 
@@ -268,17 +268,17 @@ class Form extends FormFacade
      * @return string
      */
     public static function textareaMultiLanguageGroup(
-        $languages,
-        $name,
-        $title,
+        array $languages,
+        string $name,
+        string $title,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         $attributes['rows'] = 5;
 
-        $translation = null;
+        $translation = [];
 
         foreach ($languages as $val) {
             $value_tmp = Request::old($name.'['.$val['id'].']') ? Request::old($name.'['.$val['id'].']') : null;
@@ -324,13 +324,13 @@ class Form extends FormFacade
      * @return string
      */
     public static function selectGroup(
-        $name,
-        $title,
-        $list,
+        string $name,
+        string $title,
+        array $list,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         return self::view('form.selectGroup', [
             'errors' => $errors,
@@ -357,13 +357,13 @@ class Form extends FormFacade
      * @return string
      */
     public static function checkboxGroup(
-        $name,
-        $title,
+        string $name,
+        string $title,
         $value = 1,
         $input = 0,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         $input = Request::old($name) ? Request::old($name) : $input;
 
@@ -390,19 +390,19 @@ class Form extends FormFacade
      * @return string
      */
     public static function radioGroup(
-        $name,
-        $title,
-        $choices,
+        string $name,
+        string $title,
+        array $choices,
         $value = 1,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         if (!is_array($choices)) {
             return;
         }
 
-        $text = null;
+        $text = '';
 
         foreach ($choices as $key => $_value) {
             $text .= self::radio($name, $key, ($key == $value), $attributes).' '.$_value.' ';
@@ -425,7 +425,7 @@ class Form extends FormFacade
      *
      * @return string
      */
-    public static function submitGroup($options = [], $attributes = [])
+    public static function submitGroup(array $options = [], array $attributes = [])
     {
         $options['submit_title'] = array_get($options, 'submit_title', trans('form.submit'));
 
@@ -440,7 +440,7 @@ class Form extends FormFacade
      *
      * @return string
      */
-    public static function textGroup($text, $title = null)
+    public static function textGroup(string $text, string $title = '')
     {
         return self::view('form.textGroup', [
             'title' => $title,
@@ -453,8 +453,11 @@ class Form extends FormFacade
      *
      * @param string $viewName Name of the base view
      * @param array  $params   Params
+     * @param bool   $render
+     *
+     * @return  string|\Illuminate\Http\Response
      */
-    public static function view($viewName, $params = [], $render = false)
+    public static function view(string $viewName, array $params = [], bool $render = false)
     {
         $res = view('aperdiaui::'.config('aperdiaui.style').'.'.$viewName, $params);
 
@@ -478,12 +481,12 @@ class Form extends FormFacade
      * @return string
      */
     public static function time(
-        $name,
-        $title,
+        string $name,
+        string $title,
         $value = null,
         $errors = null,
-        $attributes = [],
-        $help = null
+        array $attributes = [],
+        string $help = ''
     ) {
         $values = [null => '--'];
 

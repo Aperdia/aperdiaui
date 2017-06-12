@@ -25,7 +25,7 @@ class Indicator extends Core
      *
      * @var string
      */
-    protected $message = null;
+    protected $message = '';
 
     /**
      * Attributes of indicator.
@@ -48,7 +48,7 @@ class Indicator extends Core
      * @param string $message    Message in indicator
      * @param array  $attributes Attributes of indicator
      */
-    public function __construct($class, $message, $attributes = [])
+    public function __construct(string $class, string $message, array $attributes = [])
     {
         if (ctype_alpha(str_replace(['-', '_', ' '], '', $class))) {
             $this->class = $class;
@@ -69,7 +69,7 @@ class Indicator extends Core
      *
      * @return Indicator
      */
-    public static function __callStatic($method, $params)
+    public static function __callStatic(string $method, array $params)
     {
         // verif if color exists
         if (in_array($method, Helpers::$colors)) {
@@ -92,7 +92,7 @@ class Indicator extends Core
      *
      * @return Indicator
      */
-    public static function custom($class, $message, $attributes = [])
+    public static function custom(string $class, string $message, array $attributes = [])
     {
         return static::create($class, $message, $attributes);
     }
@@ -104,7 +104,7 @@ class Indicator extends Core
      *
      * @return Indicator
      */
-    public function tag($tag)
+    public function tag(string $tag)
     {
         if (ctype_alpha($tag)) {
             $this->tag = $tag;
