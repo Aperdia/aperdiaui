@@ -1,6 +1,6 @@
 # AperdiaUI
 
-This package includes UI modules of BootStrap3 for a [Laravel 5](http://www.laravel.com) project.
+This package includes UI modules of BootStrap3 and Bulma for a [Laravel 5](http://www.laravel.com) project.
 
 ### Configuration
 
