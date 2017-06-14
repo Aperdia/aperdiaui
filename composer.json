@@ -28,7 +28,8 @@
       "aliases": {
         "Alert": "Aperdia\\AperdiaUI\\Alert",
         "Breadcrumb": "Aperdia\\AperdiaUI\\Breadcrumb",
-        "Form": "Aperdia\\AperdiaUI\\Form"
+        "Form": "Aperdia\\AperdiaUI\\Form",
+        "Link": "Aperdia\\AperdiaUI\\Link"
       }
     }
   }
