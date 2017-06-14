@@ -43,10 +43,7 @@ class Dropdown extends Core
     public function __construct(string $title = 'Action', array $attributes = [])
     {
         $this->title = $title;
-
-        if (!empty($attributes) && is_array($attributes)) {
-            $this->attributes = $attributes;
-        }
+        $this->attributes = $attributes;
     }
 
     /**

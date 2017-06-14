@@ -55,10 +55,7 @@ class Indicator extends Core
         }
 
         $this->message = $message;
-
-        if (!empty($attributes) && is_array($attributes)) {
-            $this->attributes = $attributes;
-        }
+        $this->attributes = $attributes;
     }
 
     /**
