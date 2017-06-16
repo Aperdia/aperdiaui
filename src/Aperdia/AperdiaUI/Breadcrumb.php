@@ -41,9 +41,7 @@ class Breadcrumb extends Core
      */
     public function __construct(array $attributes = [])
     {
-        if (!empty($attributes) && is_array($attributes)) {
-            $this->attributes = $attributes;
-        }
+        $this->attributes = $attributes;
     }
 
     /**
