@@ -103,7 +103,7 @@ class Form extends FormFacade
      * @param string     $name       Name of input
      * @param string     $title      Title of input
      * @param mixed      $value      Value of input
-     * @param MessageBag $errors
+     * @param MessageBag|null  $errors
      * @param array      $attributes
      * @param string     $help       Help message
      * @param bool       $label      Display label
@@ -399,7 +399,7 @@ class Form extends FormFacade
         string $help = ''
     ) {
         if (!is_array($choices)) {
-            return;
+            return '';
         }
 
         $text = '';
