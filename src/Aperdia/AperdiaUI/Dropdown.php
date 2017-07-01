@@ -136,7 +136,7 @@ class Dropdown extends Core
     public function show()
     {
         if (empty($this->elements)) {
-            return;
+            return '';
         }
 
         return self::view(

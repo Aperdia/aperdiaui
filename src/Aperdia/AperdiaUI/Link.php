@@ -39,7 +39,7 @@ class Link extends Core
      *
      * @param array  $attributes Attributes of list of links
      *
-     * @return list of links
+     * @return Link List of links
      */
     public static function create(array $attributes = [])
     {
@@ -54,7 +54,7 @@ class Link extends Core
      * @param string $icon    Icon of element
      * @param bool   $onclick Onclick property
      *
-     * @return list of links
+     * @return Link List of links
      */
     public function addLink(string $title, string $link = '', string $icon = '', bool $onclick = false)
     {
@@ -83,7 +83,7 @@ class Link extends Core
     public function show()
     {
         if (empty($this->elements)) {
-            return;
+            return '';
         }
 
         return self::view(
