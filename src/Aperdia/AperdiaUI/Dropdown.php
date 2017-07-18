@@ -72,7 +72,7 @@ class Dropdown extends Core
     {
         $this->elements[] = [
             'type' => 'link',
-            'title' => e($title),
+            'title' => $title,
             'link' => $link,
             'icon' => $icon,
         ];
@@ -91,7 +91,7 @@ class Dropdown extends Core
     {
         $this->elements[] = [
             'type' => 'header',
-            'title' => e($title),
+            'title' => $title,
         ];
 
         return $this;
@@ -122,7 +122,7 @@ class Dropdown extends Core
     {
         $this->elements[] = [
             'type' => 'disabled',
-            'title' => e($title),
+            'title' => $title,
         ];
 
         return $this;
@@ -139,7 +139,7 @@ class Dropdown extends Core
             return '';
         }
 
-        return self::view(
+        return $this->view(
             'dropdown',
             [
                 'attributes' => $this->attributes,

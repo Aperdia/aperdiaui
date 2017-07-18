@@ -30,9 +30,9 @@ class Core
      * @param array  $params   Params
      * @param bool   $render
      *
-     * @return  string|\Illuminate\Http\Response
+     * @return string|\Illuminate\Http\Response
      */
-    public static function view(string $viewName, array $params = [], bool $render = false)
+    public function view(string $viewName, array $params = [], bool $render = false)
     {
         $res = view('aperdiaui::'.config('aperdiaui.style').'.'.$viewName, $params);
 

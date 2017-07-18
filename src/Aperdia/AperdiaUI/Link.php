@@ -27,7 +27,7 @@ class Link extends Core
     /**
      * Construct.
      *
-     * @param array  $attributes Attributes of list of links
+     * @param array $attributes Attributes of list of links
      */
     public function __construct(array $attributes = [])
     {
@@ -37,7 +37,7 @@ class Link extends Core
     /**
      * Create a new list of links.
      *
-     * @param array  $attributes Attributes of list of links
+     * @param array $attributes Attributes of list of links
      *
      * @return Link List of links
      */
@@ -60,7 +60,7 @@ class Link extends Core
     {
         $element = [
             'type' => 'link',
-            'title' => e($title),
+            'title' => $title,
             'icon' => $icon,
         ];
 
@@ -86,7 +86,7 @@ class Link extends Core
             return '';
         }
 
-        return self::view(
+        return $this->view(
             'link',
             [
                 'attributes' => $this->attributes,

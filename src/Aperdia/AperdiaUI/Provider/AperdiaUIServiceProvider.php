@@ -39,7 +39,6 @@ class AperdiaUIServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**

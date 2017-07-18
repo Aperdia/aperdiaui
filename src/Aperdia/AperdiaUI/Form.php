@@ -99,16 +99,16 @@ class Form extends FormFacade
     /**
      * Display input for form-group.
      *
-     * @param string     $type       Type of input
-     * @param string     $name       Name of input
-     * @param string     $title      Title of input
-     * @param mixed      $value      Value of input
-     * @param MessageBag|null  $errors
-     * @param array      $attributes
-     * @param string     $help       Help message
-     * @param bool       $label      Display label
-     * @param string     $iconpre    Display icon previous
-     * @param string     $iconpost   Display icon post
+     * @param string          $type       Type of input
+     * @param string          $name       Name of input
+     * @param string          $title      Title of input
+     * @param mixed           $value      Value of input
+     * @param MessageBag|null $errors
+     * @param array           $attributes
+     * @param string          $help       Help message
+     * @param bool            $label      Display label
+     * @param string          $iconpre    Display icon previous
+     * @param string          $iconpost   Display icon post
      *
      * @return string
      */
@@ -455,7 +455,7 @@ class Form extends FormFacade
      * @param array  $params   Params
      * @param bool   $render
      *
-     * @return  string|\Illuminate\Http\Response
+     * @return string|\Illuminate\Http\Response
      */
     public static function view(string $viewName, array $params = [], bool $render = false)
     {
@@ -471,12 +471,12 @@ class Form extends FormFacade
     /**
      * Display time select.
      *
-     * @param  string $name
-     * @param  string $title
-     * @param  mixed $value
-     * @param  MessageBag $errors
-     * @param  array  $attributes
-     * @param  string $help
+     * @param string     $name
+     * @param string     $title
+     * @param mixed      $value
+     * @param MessageBag $errors
+     * @param array      $attributes
+     * @param string     $help
      *
      * @return string
      */

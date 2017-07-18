@@ -117,7 +117,7 @@ class Indicator extends Core
      */
     public function show()
     {
-        return self::view(
+        return $this->view(
             'indicator',
             [
                 'tag' => $this->tag,
