@@ -67,7 +67,7 @@ class Alert extends Indicator
      */
     public function show()
     {
-        return self::view(
+        return $this->view(
             'alert',
             [
                 'type' => $this->type,

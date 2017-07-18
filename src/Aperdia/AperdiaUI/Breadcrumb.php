@@ -68,7 +68,7 @@ class Breadcrumb extends Core
     public function add(string $title, string $link = '', array $attributes = [])
     {
         $this->elements[] = [
-            'title' => e($title),
+            'title' => $title,
             'link' => $link,
             'attributes' => $attributes,
         ];
@@ -79,7 +79,7 @@ class Breadcrumb extends Core
     /**
      * Cover.
      *
-     * @return  Breadcrumb
+     * @return Breadcrumb
      */
     public function cover()
     {
@@ -99,7 +99,7 @@ class Breadcrumb extends Core
             return '';
         }
 
-        return self::view(
+        return $this->view(
             'breadcrumb',
             [
                 'attributes' => $this->attributes,
