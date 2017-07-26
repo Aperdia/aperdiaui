@@ -427,7 +427,7 @@ class Form extends FormFacade
      */
     public static function submitGroup(array $options = [], array $attributes = [])
     {
-        $options['submit_title'] = array_get($options, 'submit_title', trans('form.submit'));
+        $options['submit_title'] = $options['submit_title'] ?? trans('form.submit');
 
         return self::view('form.submitGroup', compact('attributes', 'options'));
     }
