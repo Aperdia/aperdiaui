@@ -1,4 +1,4 @@
-<div>
+<div class="field">
   {!! Form::submit($options['submit_title'], \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'button')) !!}
 
   @if (isset($options['cancel_url']))
