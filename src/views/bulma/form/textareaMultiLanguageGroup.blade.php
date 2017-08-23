@@ -1,4 +1,4 @@
-<div>
+<div class="field">
   <label class="label" for="{!! $name !!}">{!! $title !!}</label>
 
   @if (!empty($help))
