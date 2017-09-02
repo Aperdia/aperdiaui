@@ -23,7 +23,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Aperdia\\AperdiaUI\\AperdiaUIServiceProvider"
+        "Aperdia\\AperdiaUI\\Provider\\AperdiaUIServiceProvider"
       ],
       "aliases": {
         "Alert": "Aperdia\\AperdiaUI\\Alert",

@@ -10,7 +10,7 @@ Then you can add theses aliases in your `app/config/app.php`:
     'Breadcrumb'      => 'Aperdia\AperdiaUI\Breadcrumb',
     'Form'            => 'Aperdia\AperdiaUI\Form'
 
-    'Aperdia\\AperdiaUI\\AperdiaUIServiceProvider'
+    'Aperdia\\AperdiaUI\\Provider\\AperdiaUIServiceProvider'
 
 ---
 
