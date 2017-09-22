@@ -10,7 +10,7 @@
   @elseif ($value === 'more')
     <li><span class="pagination-ellipsis">&hellip;</span></li>
   @else
-    <li><a class="pagination-link" aria-label="Goto page {!! $key !!}">{!! $key !!}</a></li>
+    <li><a href="{!! $url !!}&amp;p={!! $key !!}" class="pagination-link" aria-label="Goto page {!! $key !!}">{!! $key !!}</a></li>
   @endif
 @endforeach
   </ul>
