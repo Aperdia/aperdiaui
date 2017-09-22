@@ -19,84 +19,6 @@ use View;
 class Form extends FormFacade
 {
     /**
-     * Open form-horizontal.
-     *
-     * @param array $options
-     *
-     * @return string
-     */
-    public static function openHorizontal(array $options = [])
-    {
-        return self::open(Helpers::addClass($options, 'form-horizontal'));
-    }
-
-    /**
-     * Display input for form basic.
-     *
-     * @param string     $type       Type of input
-     * @param string     $name       Name of input
-     * @param string     $title      Title of input
-     * @param mixed      $value      Value of input
-     * @param MessageBag $errors
-     * @param array      $attributes
-     * @param string     $help       Help message
-     *
-     * @return string
-     */
-    public static function inputBasic(
-        string $type,
-        string $name,
-        string $title = '',
-        $value = null,
-        $errors = null,
-        array $attributes = [],
-        string $help = ''
-    ) {
-        return self::view('form.inputBasic', [
-            'type' => $type,
-            'errors' => $errors,
-            'name' => $name,
-            'title' => $title,
-            'help' => $help,
-            'value' => Request::old($name) ? Request::old($name) : $value,
-            'attributes' => $attributes,
-        ]);
-    }
-
-    /**
-     * Display select for form basic.
-     *
-     * @param string     $name       Name of select
-     * @param string     $title      Title of select
-     * @param array      $list       List of values
-     * @param mixed      $value      Value of select
-     * @param MessageBag $errors
-     * @param array      $attributes
-     * @param string     $help       Help message
-     *
-     * @return string
-     */
-    public static function selectBasic(
-        string $name,
-        string $title,
-        array $list,
-        $value = null,
-        $errors = null,
-        array $attributes = [],
-        string $help = ''
-    ) {
-        return self::view('form.selectBasic', [
-            'errors' => $errors,
-            'name' => $name,
-            'title' => $title,
-            'help' => $help,
-            'list' => $list,
-            'value' => Request::old($name) ? Request::old($name) : $value,
-            'attributes' => $attributes,
-        ]);
-    }
-
-    /**
      * Display input for form-group.
      *
      * @param string          $type       Type of input
@@ -133,7 +55,7 @@ class Form extends FormFacade
             'help' => $help,
             'iconpost' => $iconpost,
             'iconpre' => $iconpre,
-            'value' => Request::old($name) ? Request::old($name) : $value,
+            'value' => Request::old($name) ?? $value,
             'attributes' => $attributes,
         ]);
     }
@@ -165,11 +87,7 @@ class Form extends FormFacade
         $inputLanguages = [];
 
         foreach ($languages as $val) {
-            $value_tmp = Request::old($name.'['.$val['id'].']') ? Request::old($name.'['.$val['id'].']') : null;
-
-            if (empty($value_tmp)) {
-                $value_tmp = isset($value[$val['id']][$name]) ? $value[$val['id']][$name] : null;
-            }
+            $value_tmp = Request::old($name.'['.$val['id'].']') ?? $value[$val['id']][$name] ?? '';
 
             $inputLanguages[] = [
                 'type' => $type,
@@ -217,7 +135,7 @@ class Form extends FormFacade
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'value' => Request::old($name) ? Request::old($name) : $value,
+            'value' => Request::old($name) ?? $value,
             'attributes' => $attributes,
         ]);
     }
@@ -249,7 +167,7 @@ class Form extends FormFacade
             'name' => $name,
             'title' => $title,
             'help' => $help,
-            'value' => Request::old($name) ? Request::old($name) : $value,
+            'value' => Request::old($name) ?? $value,
             'attributes' => $attributes,
         ]);
     }
@@ -281,13 +199,9 @@ class Form extends FormFacade
         $translation = [];
 
         foreach ($languages as $val) {
-            $value_tmp = Request::old($name.'['.$val['id'].']') ? Request::old($name.'['.$val['id'].']') : null;
+            $value_tmp = Request::old($name.'['.$val['id'].']') ?? $value[$val['id']][$name] ?? '';
 
-            if (empty($value_tmp)) {
-                $value_tmp = isset($value[$val['id']][$name]) ? $value[$val['id']][$name] : null;
-            }
-
-            $error = null;
+            $error = '';
             if (!is_null($errors) && $errors->has($name.'['.$val['id'].']')) {
                 $error = $errors->first($name.'['.$val['id'].']');
             }
@@ -338,7 +252,7 @@ class Form extends FormFacade
             'title' => $title,
             'help' => $help,
             'list' => $list,
-            'value' => Request::old($name) ? Request::old($name) : $value,
+            'value' => Request::old($name) ?? $value,
             'attributes' => $attributes,
         ]);
     }
@@ -365,7 +279,7 @@ class Form extends FormFacade
         array $attributes = [],
         string $help = ''
     ) {
-        $input = Request::old($name) ? Request::old($name) : $input;
+        $input = Request::old($name) ?? $input;
 
         return self::view('form.checkboxGroup', [
             'title' => $title,
