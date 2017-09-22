@@ -8,7 +8,7 @@
 
 namespace Aperdia\AperdiaUI;
 
-use Kilte\Pagination\Pagination;
+use Kilte\Pagination\Pagination use KiltePagination;
 
 /**
  * Pagination.
@@ -28,7 +28,7 @@ class Pagination
      */
     public static function get(string $url, int $total, int $currentPage, int $nbrByPage = 10, int $neighbord = 4)
     {
-        $pagination = new Pagination($total, $currentPage, $nbrByPage, $neighbord);
+        $pagination = new KiltePagination($total, $currentPage, $nbrByPage, $neighbord);
         $pagination = $pagination->build();
         
         return $this->view('pagination', compact('pagination'));
