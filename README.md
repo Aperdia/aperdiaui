@@ -1,6 +1,6 @@
 # AperdiaUI
 
-This package includes UI modules of BootStrap3 and Bulma for a [Laravel 5](http://www.laravel.com) project.
+This package includes UI modules of Bulma for a [Laravel 5.5](http://www.laravel.com) project.
 
 ### Configuration
 
@@ -86,19 +86,7 @@ Display a dropdown with four links, a divider and two headers.
 
 ## Form
 
-### Form horizontal
-
-You can display a horizontal form with :
-
-    Form::openHorizontal()
-
-### Input for basic exemple
-
-    Form::inputBasic($type_input, $name_input, $title, $value, $errors_from_Laravel, $attributes, $help)
-
-    Form::selectBasic($name_input, $title, $list, $value, $errors_from_Laravel, $attributes, $help)
-
-### Input for form horizontal
+### Input for group form
 
 Input with type text, url, email...
 
