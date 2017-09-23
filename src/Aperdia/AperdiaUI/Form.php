@@ -291,6 +291,31 @@ class Form extends FormFacade
     }
 
     /**
+     * Display checkbox for form-group, with switch.
+     *
+     * @param string     $name       Name of checkbox
+     * @param string     $title      Title of checkbox
+     * @param mixed      $value      Value if checked
+     * @param mixed      $input      Value by input
+     * @param MessageBag $errors
+     * @param array      $attributes
+     * @param string     $help       Help message
+     *
+     * @return string
+     */
+    public static function switchGroup(
+        string $name,
+        string $title,
+        $value = 1,
+        $input = 0,
+        $errors = null,
+        array $attributes = [],
+        string $help = ''
+    ) {
+        return self::view('form.switch', compact('title', 'value', 'input', 'attributes', 'help', 'errors', 'name'));
+    }
+
+    /**
      * Display input radio for form-group.
      *
      * @param string     $name       Name of radio
@@ -373,13 +398,7 @@ class Form extends FormFacade
      */
     public static function view(string $viewName, array $params = [], bool $render = false)
     {
-        $res = view('aperdiaui::'.config('aperdiaui.style').'.'.$viewName, $params);
-
-        if ($render) {
-            return $res->render();
-        }
-
-        return $res;
+        return Helpers::view($viewName, $params, $render);
     }
 
     /**
