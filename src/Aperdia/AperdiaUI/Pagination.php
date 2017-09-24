@@ -31,6 +31,6 @@ class Pagination
         $pagination = new KiltePagination($total, $currentPage, $nbrByPage, $neighbord);
         $pagination = $pagination->build();
 
-        return $this->view('pagination', compact('pagination', 'url'));
+        return Helpers::view('pagination', compact('pagination', 'url'));
     }
 }
