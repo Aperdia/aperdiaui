@@ -37,7 +37,7 @@ class Helpers
 
         return $array;
     }
-    
+
     /**
      * Personalized views.
      *
