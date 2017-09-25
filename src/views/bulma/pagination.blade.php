@@ -1,4 +1,4 @@
-<nav class="pagination is-centered is-small" role="navigation" aria-label="pagination">
+<nav class="pagination is-centered" role="navigation" aria-label="pagination">
   <ul class="pagination-list">
 @foreach ($pagination as $key => $value)
   @if ($value === 'current')
