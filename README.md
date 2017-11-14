@@ -21,68 +21,27 @@ You can display alerts with Alert class, you can choose design from Bootstrap or
 Displays a alert box with class "alert-success".
 
     Alert::success("Youpi !")
-    <div class="alert alert-success">Youpi !</div>
 
-Displays a alert box with close button
+Displays a error box with close button
 
-    Alert::success("Youpi !")->close()
-    <div class="alert alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        Youpi !
-    </div>
+    Alert::error("Youpi !")->close()
 
 ## Breadcrumbs
 
 You can display a simple breadcrumb.
 
     Breadcrumb::create()->add("Home", "/")->add("News", "/news")->add("My News")
-    <ul class="breadcrumb"><li><a href="/">Home</a></li><li><a href="/news">News</a></li><li>My News</li></ul>
 
 ## Dropdowns
 
 You can display dropdowns with Dropdown class.
 
-Display a simple dropdown with two links.
-
-    Dropdown::create()->addLink("Link 1", "/edit")->addLink("Link 2", "/delete")
-
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-            Action
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/edit">Link 1</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/delete">Link 2</a></li>
-        </ul>
-    </div>
-
-Display a dropdown with four links, a divider and two headers.
-
     Dropdown::create("Admin")
-        ->addHeader("Header 1")
+        ->addText("Header 1")
         ->addLink("Link 1", "/edit")
         ->addLink("Link 2", "/delete")
         ->addDivider()
-        ->addHeader("Header 2")
-        ->addDisabled("Disabled link")
         ->addLink("Link 4", "/delete")
-
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-            Admin
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-            <li role="presentation" class="dropdown-header">Header 1</li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/edit">Link 1</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/delete">Link 2</a></li>
-            <li role="presentation" class="divider"></li>
-            <li role="presentation" class="dropdown-header">Header 2</li>
-            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Disabled Link</a></li>
-            <li role="presentation"><a role="menuitem" tabindex="-1" href="/delete">Link 4</a></li>
-        </ul>
-    </div>
 
 ## Form
 

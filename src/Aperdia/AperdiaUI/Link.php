@@ -80,6 +80,20 @@ class Link extends Core
     }
 
     /**
+     * Add divider
+     * 
+     * @return Link List of links
+     */
+    public function addDivider()
+    {
+        $this->elements =[
+            'type' => 'divider',
+        ];
+        
+        return $this;
+    }
+
+    /**
      * Display list of links.
      *
      * @return string
