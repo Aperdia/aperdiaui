@@ -81,23 +81,6 @@ class Dropdown extends Core
     }
 
     /**
-     * Add header.
-     *
-     * @param string $title Title of element
-     *
-     * @return Dropdown
-     */
-    public function addHeader(string $title)
-    {
-        $this->elements[] = [
-            'type' => 'header',
-            'title' => $title,
-        ];
-
-        return $this;
-    }
-
-    /**
      * Add divider.
      *
      * @return Dropdown
@@ -112,17 +95,17 @@ class Dropdown extends Core
     }
 
     /**
-     * Add disabled.
+     * Add text.
      *
-     * @param string $title Title of element
+     * @param string $text
      *
      * @return Dropdown
      */
-    public function addDisabled(string $title)
+    public function addText(string $text)
     {
         $this->elements[] = [
-            'type' => 'disabled',
-            'title' => $title,
+            'type' => 'text',
+            'text' => $text,
         ];
 
         return $this;

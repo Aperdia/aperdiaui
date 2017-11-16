@@ -49,15 +49,19 @@ class Link extends Core
     /**
      * Add link.
      *
-     * @param string $title   Title of element
-     * @param string $link    Link of element
-     * @param string $icon    Icon of element
-     * @param bool   $onclick Onclick property
+     * @param string      $title   Title of element
+     * @param string|null $link    Link of element
+     * @param string      $icon    Icon of element
+     * @param bool        $onclick Onclick property
      *
      * @return Link List of links
      */
-    public function addLink(string $title, string $link = '', string $icon = '', bool $onclick = false)
+    public function addLink(string $title, string $link = null, string $icon = '', bool $onclick = false)
     {
+        if (empty($link)) {
+            return $this;
+        }
+
         $element = [
             'type' => 'link',
             'title' => $title,
@@ -71,6 +75,20 @@ class Link extends Core
         }
 
         $this->elements[] = $element;
+
+        return $this;
+    }
+
+    /**
+     * Add divider.
+     *
+     * @return Link List of links
+     */
+    public function addDivider()
+    {
+        $this->elements = [
+            'type' => 'divider',
+        ];
 
         return $this;
     }
