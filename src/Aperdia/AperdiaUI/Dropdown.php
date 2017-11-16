@@ -93,10 +93,10 @@ class Dropdown extends Core
 
         return $this;
     }
-    
+
     /**
      * Add text.
-     * 
+     *
      * @param string $text
      *
      * @return Dropdown
@@ -107,7 +107,7 @@ class Dropdown extends Core
             'type' => 'text',
             'text' => $text,
         ];
-        
+
         return $this;
     }
 
