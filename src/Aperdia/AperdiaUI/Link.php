@@ -86,7 +86,7 @@ class Link extends Core
      */
     public function addDivider()
     {
-        $this->elements = [
+        $this->elements[] = [
             'type' => 'divider',
         ];
 
