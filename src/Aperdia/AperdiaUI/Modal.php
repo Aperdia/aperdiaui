@@ -14,10 +14,10 @@ namespace Aperdia\AperdiaUI;
 class Modal
 {
     /**
-     * Simple modal
+     * Simple modal.
      *
      * @param string $content
-     * @param array $attributes
+     * @param array  $attributes
      *
      * @return string
      */
@@ -30,10 +30,10 @@ class Modal
      * Card Modal.
      *
      * @param string $content
-     * @param array $attributes
-     * @param bool $hasHeader
+     * @param array  $attributes
+     * @param bool   $hasHeader
      * @param string $title
-     * @param bool $hasFooter
+     * @param bool   $hasFooter
      * @param string $buttonSuccess
      * @param string $buttonCancel
      *
