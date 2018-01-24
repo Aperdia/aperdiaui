@@ -3,7 +3,7 @@
     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
       <span>{!! $title !!}</span>
       <span class="icon is-small">
-        <i class="fa fa-angle-down" aria-hidden="true"></i>
+        <em class="fa fa-angle-down" aria-hidden="true"></em>
       </span>
     </button>
   </div>
@@ -13,7 +13,7 @@
     @if ($element['type'] === 'link')
       <a href="{!! $element['link'] !!}" class="dropdown-item">
       @if ($element['icon'] != '')
-        <i class="fa fa-{!! $element['icon'] !!} fa-2x"></i>
+        <em class="fa fa-{!! $element['icon'] !!} fa-2x"></em>
       @endif
         {!! $element['title'] !!}
       </a>

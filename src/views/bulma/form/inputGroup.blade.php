@@ -15,12 +15,12 @@
     
   @if ($iconpre != '')
     <span class="icon is-small is-left">
-      <i class="fa fa-{!! $iconpre !!}"></i>
+      <em class="fa fa-{!! $iconpre !!}"></em>
     </span>
   @endif
   @if ($iconpost != '')
     <span class="icon is-small is-right">
-      <i class="fa fa-{!! $iconpost !!}"></i>
+      <em class="fa fa-{!! $iconpost !!}"></em>
     </span>
   @endif
 
