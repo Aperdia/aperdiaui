@@ -7,7 +7,7 @@
     @else
       <a href="{!! $element['link'] !!}" title="{!! $element['title'] !!}">
     @endif
-      <i class="fa fa-{!! $element['icon'] !!} fa-2x"></i>
+      <em class="fa fa-{!! $element['icon'] !!} fa-2x"></em>
     </a>
   @endif
 @endforeach
