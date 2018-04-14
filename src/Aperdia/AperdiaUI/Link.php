@@ -8,6 +8,9 @@
 
 namespace Aperdia\AperdiaUI;
 
+/**
+ * Link.
+ */
 class Link extends Core
 {
     /**
