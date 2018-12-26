@@ -12,8 +12,7 @@
   "require": {
     "php": ">=7.0.0",
     "illuminate/support": "~5.5",
-    "laravelcollective/html": "~5.5",
-    "amstaffix/pagination": "~1.1"
+    "laravelcollective/html": "~5.5"
   },
   "autoload": {
     "psr-0": {
