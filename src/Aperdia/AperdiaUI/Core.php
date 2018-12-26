@@ -30,7 +30,7 @@ class Core
      * @param array  $params   Params
      * @param bool   $render
      *
-     * @return string|\Illuminate\Http\Response
+     * @return string|\Illuminate\Contracts\View\View
      */
     public function view(string $viewName, array $params = [], bool $render = false)
     {
