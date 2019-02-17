@@ -42,4 +42,14 @@ class Core
 
         return $res;
     }
+
+    /**
+     * Show.
+     *
+     * @return string
+     */
+    public function show()
+    {
+        return '';
+    }
 }

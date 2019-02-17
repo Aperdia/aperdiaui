@@ -14,6 +14,13 @@ namespace Aperdia\AperdiaUI;
 class Indicator extends Core
 {
     /**
+     * Type of indicator.
+     *
+     * @var string
+     */
+    protected $type;
+
+    /**
      * Class of indicator.
      *
      * @var string
@@ -56,6 +63,20 @@ class Indicator extends Core
 
         $this->message = $message;
         $this->attributes = $attributes;
+    }
+
+    /**
+     * Create a new Indicator.
+     *
+     * @param string $class      Class custom of indicator
+     * @param string $message    Message in indicator
+     * @param array  $attributes Attributes of indicator
+     *
+     * @return Indicator
+     */
+    protected static function create(string $class, string $message, array $attributes = [])
+    {
+        return new self($class, $message, $attributes);
     }
 
     /**
