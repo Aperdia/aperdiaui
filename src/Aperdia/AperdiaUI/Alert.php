@@ -28,6 +28,20 @@ class Alert extends Indicator
     protected $close = false;
 
     /**
+     * Create a new Alert.
+     *
+     * @param string $class      Class of indicator
+     * @param string $message    Message in indicator
+     * @param array  $attributes Attributes of indicator
+     *
+     * @return Alert
+     */
+    protected static function create(string $class, string $message, array $attributes = [])
+    {
+        return new self($class, $message, $attributes);
+    }
+
+    /**
      * Add link for close.
      *
      * @return Alert
