@@ -56,7 +56,7 @@ class Form extends FormFacade
             'iconpost' => $iconpost,
             'iconpre' => $iconpre,
             'value' => Request::old($name) ?? $value,
-            'attributes' => $attributes,
+            'attributes' => self::inputMode($attributes, $type),
         ]);
     }
 
@@ -440,5 +440,24 @@ class Form extends FormFacade
         }
 
         return self::selectGroup($name, $title, $values, $value, $errors, $attributes, $help);
+    }
+
+    /**
+     * Add input mode, depending on input type.
+     *
+     * @param array $attributes
+     * @param string $typeInput
+     *
+     * @return array
+     */
+    protected static function inputMode(array $attributes, string $typeInput)
+    {
+        if ($typeInput === "num") {
+            $attributes = Helpers::addClass($attributes, 'numeric', 'inputmode');
+        } elseif (in_array($typeInput, ['tel', 'email', 'url'])) {
+            $attributes = Helpers::addClass($attributes, $typeInput, 'inputmode');
+        }
+
+        return $attributes;
     }
 }
