@@ -231,7 +231,7 @@ class Pagination
      * @param int    $nbrByPage   Number by page
      * @param int    $neighbord   Neighbord
      *
-     * @return string
+     * @return string|array
      */
     public static function get(string $url, int $total, int $currentPage, int $nbrByPage = 10, int $neighbord = 4)
     {

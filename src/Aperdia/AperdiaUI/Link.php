@@ -99,7 +99,7 @@ class Link extends Core
     /**
      * Display list of links.
      *
-     * @return string
+     * @return string|array
      */
     public function show()
     {

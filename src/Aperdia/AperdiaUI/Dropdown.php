@@ -114,7 +114,7 @@ class Dropdown extends Core
     /**
      * Display dropdown.
      *
-     * @return string
+     * @return string|array
      */
     public function show()
     {

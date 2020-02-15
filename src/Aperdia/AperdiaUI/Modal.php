@@ -19,7 +19,7 @@ class Modal
      * @param string $content
      * @param array  $attributes
      *
-     * @return string
+     * @return string|array
      */
     public static function get(string $content, array $attributes = [])
     {
@@ -37,7 +37,7 @@ class Modal
      * @param string $buttonSuccess
      * @param string $buttonCancel
      *
-     * @return string
+     * @return string|array
      */
     public static function getCard(
         string $content,

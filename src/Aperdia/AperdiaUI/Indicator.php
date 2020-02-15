@@ -134,7 +134,7 @@ class Indicator extends Core
     /**
      * Return html.
      *
-     * @return string
+     * @return string|array
      */
     public function show()
     {

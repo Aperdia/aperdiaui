@@ -56,7 +56,7 @@ class Alert extends Indicator
     /**
      * Display Alert.
      *
-     * @return string
+     * @return string|array
      */
     public function show()
     {

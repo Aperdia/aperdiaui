@@ -45,7 +45,7 @@ class Helpers
      * @param array  $params   Params
      * @param bool   $render
      *
-     * @return string|\Illuminate\Contracts\View\View
+     * @return string|array
      */
     public static function view(string $viewName, array $params = [], bool $render = false)
     {

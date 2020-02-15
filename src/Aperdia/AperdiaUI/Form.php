@@ -32,7 +32,7 @@ class Form extends FormFacade
      * @param string          $iconpre    Display icon previous
      * @param string          $iconpost   Display icon post
      *
-     * @return string
+     * @return string|array
      */
     public static function inputGroup(
         string $type,
@@ -72,7 +72,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function inputMultiLanguageGroup(
         array $languages,
@@ -118,7 +118,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function textareaGroup(
         string $name,
@@ -150,7 +150,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function textareaLine(
         string $name,
@@ -183,7 +183,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function textareaMultiLanguageGroup(
         array $languages,
@@ -235,7 +235,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function selectGroup(
         string $name,
@@ -268,7 +268,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function checkboxGroup(
         string $name,
@@ -301,7 +301,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function switchGroup(
         string $name,
@@ -326,7 +326,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help       Help message
      *
-     * @return string
+     * @return string|array
      */
     public static function radioGroup(
         string $name,
@@ -362,7 +362,7 @@ class Form extends FormFacade
      * @param array $options
      * @param array $attributes
      *
-     * @return string
+     * @return string|array
      */
     public static function submitGroup(array $options = [], array $attributes = [])
     {
@@ -377,7 +377,7 @@ class Form extends FormFacade
      * @param string $text
      * @param string $title
      *
-     * @return string
+     * @return string|array
      */
     public static function textGroup(string $text, string $title = '')
     {
@@ -394,7 +394,7 @@ class Form extends FormFacade
      * @param array  $params   Params
      * @param bool   $render
      *
-     * @return string|\Illuminate\Contracts\View\View
+     * @return string|array
      */
     public static function view(string $viewName, array $params = [], bool $render = false)
     {
@@ -411,7 +411,7 @@ class Form extends FormFacade
      * @param array      $attributes
      * @param string     $help
      *
-     * @return string
+     * @return string|array
      */
     public static function time(
         string $name,

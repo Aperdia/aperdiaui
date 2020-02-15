@@ -91,7 +91,7 @@ class Breadcrumb extends Core
     /**
      * Display breadcrumb.
      *
-     * @return string
+     * @return string|array
      */
     public function show()
     {
