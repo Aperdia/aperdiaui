@@ -97,6 +97,23 @@ class Link extends Core
     }
 
     /**
+     * Add title.
+     *
+     * @param string $title
+     *
+     * @return Link List of links
+     */
+    public function addTitle(string $title)
+    {
+        $this->elements[] = [
+            'type' => 'title',
+            'title' => $title,
+        ];
+
+        return $this;
+    }
+
+    /**
      * Display list of links.
      *
      * @return string|array
