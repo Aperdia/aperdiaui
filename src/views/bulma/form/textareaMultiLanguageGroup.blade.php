@@ -30,7 +30,7 @@ foreach ($languages as $val) {
     <p class="help">{!! $help !!}</p>
   @endif
 
-  @foreach ($languages as $language)
+  @foreach ($translation as $language)
     <div>{!! $language['title'] !!}</div>
     {!! Form::textarea($language['name'], $language['value'], array_merge(['class' => 'textarea'], $attributes)) !!}
 

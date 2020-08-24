@@ -4,7 +4,6 @@ $inputLanguages = [];
 
 foreach ($languages as $val) {
     $inputLanguages[] = [
-        'type' => $type,
         'name' => $name.'['.$val['id'].']',
         'value' => $value[$val['id']][$name] ?? '',
         'attributes' => $attributes,

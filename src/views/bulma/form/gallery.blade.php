@@ -33,5 +33,5 @@
 
   <div id="gallery_image"></div>
 
-  @include('ostadium::admin.base.tmpl.form_gallery_image')
+  @include('admin.base.tmpl.form_gallery_image')
 </fieldset>
