@@ -7,11 +7,11 @@
     <div class="select">
       {!! Form::select($name, $list, $value, $attributes) !!}
     </div>
-    @if (!empty($help))
+    @if (! empty($help))
       <p class="help">{!! $help !!}</p>
     @endif
 
-    @if (!is_null($errors) && $errors->has($name))
+    @if (! is_null($errors) && $errors->has($name))
       <p class="help is-danger">{!! $errors->first($name) !!}</p>
     @endif
   </p>

@@ -8,7 +8,6 @@ Then you can add theses aliases in your `app/config/app.php`:
 
     'Alert'           => 'Aperdia\AperdiaUI\Alert',
     'Breadcrumb'      => 'Aperdia\AperdiaUI\Breadcrumb',
-    'Form'            => 'Aperdia\AperdiaUI\Form'
 
     'Aperdia\\AperdiaUI\\Provider\\AperdiaUIServiceProvider'
 
@@ -70,10 +69,6 @@ Textarea with translation
 Checkbox
 
     Form:::checkboxGroup($name_checkbox, $title, $value, $input, $errors_from_Laravel, $attributes, $help)
-
-Input radio
-
-    Form::radioGroup($name_radio, $title, $choices, $value, $errors_from_Laravel, $attributes, $help)
 
 Submit
 

@@ -1,5 +1,5 @@
 <div class="field">
-  {!! Form::submit($options['submit_title'], \Aperdia\AperdiaUI\Helpers::addClass($attributes, 'button is-link')) !!}
+  {!! Form::submit($options['submit_title'] ?? 'Submit', array_merge(['class' => 'button is-link'], (array) $attributes)) !!}
 
   @if (isset($options['cancel_url']))
     {!! link_to($options['cancel_url'], trans('form.cancel'), ['class' => 'button is-white']) !!}

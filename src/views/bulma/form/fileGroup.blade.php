@@ -11,7 +11,7 @@
     has-icons-right
   @endif
   ">
-    {!! Form::text($name, $value, array_merge(['class' => 'input'], (array) $attributes)) !!}
+    {!! Form::file($name, array_merge(['class' => 'input'], (array) $attributes)) !!}
 
   @if (! empty($icon['pre']))
     <span class="icon is-small is-left">
@@ -33,3 +33,4 @@
   @endif
   </div>
 </div>
+
