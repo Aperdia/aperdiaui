@@ -1,6 +1,6 @@
 # AperdiaUI
 
-This package includes UI modules of Bulma for a [Laravel 5.5](http://www.laravel.com) project.
+This package includes UI modules of Bulma for a [Laravel 6/7/8](http://www.laravel.com) project.
 
 ### Configuration
 
