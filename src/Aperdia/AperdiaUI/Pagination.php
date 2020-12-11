@@ -172,11 +172,11 @@ class Pagination
      */
     public function build(): array
     {
-        if (0 == $this->totalItems || 1 == $this->totalPages) {
-            return array();
+        if ($this->totalItems === 0 || $this->totalPages === 1) {
+            return [];
         }
 
-        $output = array();
+        $output = [];
 
         // Previous
         $offset = $this->currentPage - 1;
