@@ -9,51 +9,49 @@
 namespace Aperdia\AperdiaUI;
 
 /**
- * Pagination from the amstaffix/pagination.
- *
- * @author  Kilte Leichnam <nwotnbm@gmail.com>
+ * Pagination.
  */
 class Pagination
 {
     /**
      * Number of the first page.
      */
-    const BASE_PAGE = 1;
+    protected const BASE_PAGE = 1;
 
     /**
      * First page.
      */
-    const TAG_FIRST = 'first';
+    protected const TAG_FIRST = 'first';
 
     /**
      * The page before the previous neighbour pages.
      */
-    const TAG_LESS = 'less';
+    protected const TAG_LESS = 'less';
 
     /**
      * Previous pages.
      */
-    const TAG_PREVIOUS = 'previous';
+    protected const TAG_PREVIOUS = 'previous';
 
     /**
      * Current page.
      */
-    const TAG_CURRENT = 'current';
+    protected const TAG_CURRENT = 'current';
 
     /**
      * Next pages.
      */
-    const TAG_NEXT = 'next';
+    protected const TAG_NEXT = 'next';
 
     /**
      * The page after the next neighbour pages.
      */
-    const TAG_MORE = 'more';
+    protected const TAG_MORE = 'more';
 
     /**
      * Last page.
      */
-    const TAG_LAST = 'last';
+    protected const TAG_LAST = 'last';
 
     /**
      * @var int Total Items
@@ -74,11 +72,6 @@ class Pagination
      * @var int Total pages
      */
     private $totalPages;
-
-    /**
-     * @var int Offset
-     */
-    private $offset;
 
     /**
      * @var int Number of neighboring pages at the left and the right sides
@@ -121,48 +114,6 @@ class Pagination
         if ($this->currentPage > $this->totalPages) {
             $this->currentPage = $this->totalPages;
         }
-
-        $this->offset = abs(intval($this->currentPage * $this->perPage - $this->perPage));
-    }
-
-    /**
-     * Returns the offset of the list's slice for the current page.
-     *
-     * @return int
-     */
-    public function offset()
-    {
-        return $this->offset;
-    }
-
-    /**
-     * Returns the limit of the list's slice for the current page.
-     *
-     * @return int
-     */
-    public function limit()
-    {
-        return $this->perPage;
-    }
-
-    /**
-     * Returns number of the current page.
-     *
-     * @return int
-     */
-    public function currentPage()
-    {
-        return $this->currentPage;
-    }
-
-    /**
-     * Returns number of the last page.
-     *
-     * @return int
-     */
-    public function totalPages()
-    {
-        return $this->totalPages;
     }
 
     /**

@@ -90,7 +90,7 @@ class Indicator extends Core
     public static function __callStatic(string $method, array $params)
     {
         // verif if color exists
-        if (in_array($method, Helpers::$colors)) {
+        if (in_array($method, Helpers::getColors())) {
             $method = 'alert-'.$method;
         } else {
             $method = 'alert-info';

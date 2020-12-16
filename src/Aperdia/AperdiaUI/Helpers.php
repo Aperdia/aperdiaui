@@ -18,9 +18,17 @@ class Helpers
      *
      * @var array
      */
-    public static $colors = [
+    protected const COLORS = [
         'primary', 'secondary', 'normal', 'info', 'danger', 'warning', 'success', 'light', 'dark',
     ];
+
+    /**
+     * Returns array of colors.
+     */
+    public static function getColors(): array
+    {
+        return self::COLORS;
+    }
 
     /**
      * Add value in an array.
@@ -28,10 +36,8 @@ class Helpers
      * @param array  $array Array object
      * @param string $value Value to add
      * @param string $key   Array key to use
-     *
-     * @return array
      */
-    public static function addClass(array $array, string $value, string $key = 'class')
+    public static function addClass(array $array, string $value, string $key = 'class'): array
     {
         $array[$key] = isset($array[$key]) ? $array[$key].' '.$value : $value;
 
