@@ -4,7 +4,7 @@
 @endphp
 
 <div class="field">
-  {!! Form::checkbox($name, $value, ($input == $value), $attributes) !!}
+  {!! Form::checkbox($name, $input, ($input == $value), $attributes) !!}
   <label for="{!! $name !!}">{!! $title !!}</label>
   @if (! empty($help))
     <p class="help">{!! $help !!}</p>
