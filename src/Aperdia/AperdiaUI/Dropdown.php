@@ -51,10 +51,8 @@ class Dropdown extends Core
      *
      * @param string $title      Title of dropdown
      * @param array  $attributes Attributes of dropdown
-     *
-     * @return Dropdown
      */
-    public static function create(string $title = 'Action', array $attributes = [])
+    public static function create(string $title = 'Action', array $attributes = []): self
     {
         return new self($title, $attributes);
     }
@@ -65,10 +63,8 @@ class Dropdown extends Core
      * @param string $title Title of element
      * @param string $link  Link of element
      * @param string $icon  Icon of element
-     *
-     * @return Dropdown
      */
-    public function addLink(string $title, string $link = '', string $icon = '')
+    public function addLink(string $title, string $link = '', string $icon = ''): self
     {
         $this->elements[] = [
             'type' => 'link',
@@ -82,10 +78,8 @@ class Dropdown extends Core
 
     /**
      * Add divider.
-     *
-     * @return Dropdown
      */
-    public function addDivider()
+    public function addDivider(): self
     {
         $this->elements[] = [
             'type' => 'divider',
@@ -98,10 +92,8 @@ class Dropdown extends Core
      * Add text.
      *
      * @param string $text
-     *
-     * @return Dropdown
      */
-    public function addText(string $text)
+    public function addText(string $text): self
     {
         $this->elements[] = [
             'type' => 'text',

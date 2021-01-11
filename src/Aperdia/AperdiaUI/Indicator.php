@@ -71,10 +71,8 @@ class Indicator extends Core
      * @param string $class      Class custom of indicator
      * @param string $message    Message in indicator
      * @param array  $attributes Attributes of indicator
-     *
-     * @return Indicator
      */
-    protected static function create(string $class, string $message, array $attributes = [])
+    protected static function create(string $class, string $message, array $attributes = []): self
     {
         return new self($class, $message, $attributes);
     }
@@ -84,10 +82,8 @@ class Indicator extends Core
      *
      * @param string $method Method called
      * @param array  $params Params of method
-     *
-     * @return Indicator
      */
-    public static function __callStatic(string $method, array $params)
+    public static function __callStatic(string $method, array $params): self
     {
         // verif if color exists
         if (in_array($method, Helpers::getColors())) {
@@ -107,10 +103,8 @@ class Indicator extends Core
      * @param string $class      Class custom of indicator
      * @param string $message    Message in indicator
      * @param array  $attributes Attributes of indicator
-     *
-     * @return Indicator
      */
-    public static function custom(string $class, string $message, array $attributes = [])
+    public static function custom(string $class, string $message, array $attributes = []): self
     {
         return static::create($class, $message, $attributes);
     }
@@ -119,10 +113,8 @@ class Indicator extends Core
      * Update tag.
      *
      * @param string $tag Tag
-     *
-     * @return Indicator
      */
-    public function tag(string $tag)
+    public function tag(string $tag): self
     {
         if (ctype_alpha($tag)) {
             $this->tag = $tag;

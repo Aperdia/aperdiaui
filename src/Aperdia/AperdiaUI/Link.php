@@ -41,10 +41,8 @@ class Link extends Core
      * Create a new list of links.
      *
      * @param array $attributes Attributes of list of links
-     *
-     * @return Link List of links
      */
-    public static function create(array $attributes = [])
+    public static function create(array $attributes = []): self
     {
         return new self($attributes);
     }
@@ -56,10 +54,8 @@ class Link extends Core
      * @param string $link    Link of element
      * @param string $icon    Icon of element
      * @param bool   $onclick Onclick property
-     *
-     * @return Link List of links
      */
-    public function addLink(string $title, string $link = '', string $icon = '', bool $onclick = false)
+    public function addLink(string $title, string $link = '', string $icon = '', bool $onclick = false): self
     {
         if (empty($link)) {
             return $this;
@@ -84,10 +80,8 @@ class Link extends Core
 
     /**
      * Add divider.
-     *
-     * @return Link List of links
      */
-    public function addDivider()
+    public function addDivider(): self
     {
         $this->elements[] = [
             'type' => 'divider',
@@ -98,12 +92,8 @@ class Link extends Core
 
     /**
      * Add title.
-     *
-     * @param string $title
-     *
-     * @return Link List of links
      */
-    public function addTitle(string $title)
+    public function addTitle(string $title): self
     {
         $this->elements[] = [
             'type' => 'title',

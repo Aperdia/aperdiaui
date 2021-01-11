@@ -15,10 +15,8 @@ class Core
 {
     /**
      * Display.
-     *
-     * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->show();
     }
@@ -45,8 +43,6 @@ class Core
 
     /**
      * Show.
-     *
-     * @return string
      */
     public function show()
     {

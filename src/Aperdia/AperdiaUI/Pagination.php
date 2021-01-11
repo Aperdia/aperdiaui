@@ -87,8 +87,6 @@ class Pagination
      * @param int $neighbours  Number of neighboring pages at the left and the right sides
      *
      * @throws \LogicException
-     *
-     * @return self
      */
     public function __construct(int $totalItems, int $currentPage, int $perPage, int $neighbours = 4)
     {
@@ -118,8 +116,6 @@ class Pagination
 
     /**
      * Display.
-     *
-     * @return array
      */
     public function build(): array
     {

@@ -48,10 +48,8 @@ class Breadcrumb extends Core
      * Create a new Breadcrumb.
      *
      * @param array $attributes Attributes of breadcrumb
-     *
-     * @return Breadcrumb
      */
-    public static function create(array $attributes = [])
+    public static function create(array $attributes = []): self
     {
         return new self($attributes);
     }
@@ -62,10 +60,8 @@ class Breadcrumb extends Core
      * @param string $title      Title of element
      * @param string $link       Link of element
      * @param array  $attributes Attributes of element
-     *
-     * @return Breadcrumb
      */
-    public function add(string $title, string $link = '', array $attributes = [])
+    public function add(string $title, string $link = '', array $attributes = []): self
     {
         $this->elements[] = [
             'title' => $title,
@@ -78,10 +74,8 @@ class Breadcrumb extends Core
 
     /**
      * Cover.
-     *
-     * @return Breadcrumb
      */
-    public function cover()
+    public function cover(): self
     {
         $this->cover = true;
 
