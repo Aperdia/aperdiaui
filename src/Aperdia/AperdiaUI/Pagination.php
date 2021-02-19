@@ -10,6 +10,8 @@ declare(strict_types=1);
 
 namespace Aperdia\AperdiaUI;
 
+use LogicException;
+
 /**
  * Pagination.
  */
@@ -92,17 +94,17 @@ class Pagination
      */
     public function __construct(int $totalItems, int $currentPage, int $perPage, int $neighbours = 4)
     {
-        $this->totalItems = (int) $totalItems;
-        $this->currentPage = (int) $currentPage;
-        $this->perPage = (int) $perPage;
-        $this->neighbours = (int) $neighbours;
+        $this->totalItems = $totalItems;
+        $this->currentPage = $currentPage;
+        $this->perPage = $perPage;
+        $this->neighbours = $neighbours;
 
         if ($this->perPage <= 0) {
-            throw new \LogicException('Items per page must be at least 1');
+            throw new LogicException('Items per page must be at least 1');
         }
 
         if ($this->neighbours <= 0) {
-            throw new \LogicException('Number of neighboring pages must be at least 1');
+            throw new LogicException('Number of neighboring pages must be at least 1');
         }
 
         if ($this->currentPage < self::BASE_PAGE) {
